@@ -6,7 +6,7 @@
 /*   By: lravier <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/20 09:28:12 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/28 17:41:25 by lravier       ########   odam.nl         */
+/*   Updated: 2019/03/29 18:50:02 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,8 @@ void				ft_rot(char *s, int rot);
 void				ft_rotr(char *s, int rot);
 int					ft_pow(int base, int pow);
 void				ft_strtolower(char *s);
+t_list				*ft_lstpop(t_list **lst);
+t_list				*ft_lstpopend(t_list **lst);
+int					ft_lstlen(t_list **lst);
+void				ft_strtoupper(char *s);
 #endif
