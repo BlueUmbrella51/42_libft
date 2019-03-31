@@ -6,7 +6,7 @@
 /*   By: lravier <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/20 09:28:12 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/29 18:50:02 by lravier       ########   odam.nl         */
+/*   Updated: 2019/03/31 11:04:25 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,5 @@ t_list				*ft_lstpop(t_list **lst);
 t_list				*ft_lstpopend(t_list **lst);
 int					ft_lstlen(t_list **lst);
 void				ft_strtoupper(char *s);
+void				*ft_memrealloc(void *ptr, size_t size, size_t o_size);
 #endif
