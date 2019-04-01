@@ -6,7 +6,7 @@
 #    By: lravier <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/03/20 09:31:34 by lravier       #+#    #+#                  #
-#    Updated: 2019/03/31 10:59:09 by lravier       ########   odam.nl          #
+#    Updated: 2019/04/01 09:20:48 by lravier       ########   odam.nl          #
 #                                                                              #
 #******************************************************************************#
 
@@ -24,7 +24,7 @@ ft_strtrim ft_strsplit ft_itoa ft_putendl ft_putnbr ft_putchar_fd \
 ft_putstr_fd ft_putendl_fd ft_putnbr_fd ft_lstnew ft_lstdelone ft_lstdel \
 ft_lstaddend ft_lstadd ft_lstiter ft_lstmap ft_mempcpy ft_itoabase \
 ft_swap ft_sqrt ft_rot ft_rotr ft_atoibase ft_pow ft_strtolower ft_lstpop \
-ft_lstpopend ft_lstlen ft_strtoupper ft_memrealloc
+ft_lstpopend ft_lstlen ft_strtoupper ft_memrealloc ft_lstremove ft_lstsearch
 CSRCS := $(addsuffix .c, $(RAWFILES))
 OSRCS := $(addsuffix .o, $(RAWFILES))
 HEADER = libft.h
