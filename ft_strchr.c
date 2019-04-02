@@ -6,7 +6,7 @@
 /*   By: lravier <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/21 17:15:29 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/21 17:25:39 by lravier       ########   odam.nl         */
+/*   Updated: 2019/04/02 16:51:50 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,5 @@ char	*ft_strchr(const char *s, int c)
 			return (first);
 		first++;
 	}
-	if (*first == c)
-		return (first);
 	return (NULL);
 }
