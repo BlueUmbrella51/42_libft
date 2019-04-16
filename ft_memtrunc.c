@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_realloc.c                                       :+:    :+:            */
+/*   ft_memtrunc.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/31 10:24:11 by lravier       #+#    #+#                 */
-/*   Updated: 2019/04/16 18:41:14 by lravier       ########   odam.nl         */
+/*   Created: 2019/04/09 09:16:04 by lravier       #+#    #+#                 */
+/*   Updated: 2019/04/16 16:17:11 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memrealloc(void **ptr, size_t prev_size, size_t size)
+int		ft_memtrunc(void **orig, size_t start, size_t len)
 {
-	unsigned char	*buff;
-	size_t			mlen;
+	unsigned char	*res;
+	unsigned char	*src;
+	size_t			j;
 
-	buff = NULL;
-	mlen = size;
-	if (size <= prev_size)
-		mlen = prev_size;
-	buff = ft_memalloc(mlen);
-	if (!buff)
+	j = 0;
+	src = (unsigned char *)*orig;
+	res = (unsigned char *)ft_memalloc(len - start);
+	if (!res)
 		return (0);
-	if (mlen > 0)
-		ft_memcpy(buff, *ptr, prev_size);
-	if (*ptr)
-		free(*ptr);
-	*ptr = (void *)buff;
+	while (start < len)
+	{
+		res[j] = src[start];
+		start++;
+		j++;
+	}
+	if (*orig)
+		ft_memdel(orig);
+	*orig = (void *)res;
 	return (1);
 }

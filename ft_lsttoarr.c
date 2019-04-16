@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_realloc.c                                       :+:    :+:            */
+/*   ft_lsttoarr.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/31 10:24:11 by lravier       #+#    #+#                 */
-/*   Updated: 2019/04/16 18:41:14 by lravier       ########   odam.nl         */
+/*   Created: 2019/04/13 14:46:51 by lravier       #+#    #+#                 */
+/*   Updated: 2019/04/16 16:15:35 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memrealloc(void **ptr, size_t prev_size, size_t size)
+int		ft_lsttoarr(t_list **lst, void **arr, size_t arrlen)
 {
-	unsigned char	*buff;
-	size_t			mlen;
+	t_list			*tmp;
+	size_t			j;
+	unsigned char	*p;
+	unsigned char	*s;
 
-	buff = NULL;
-	mlen = size;
-	if (size <= prev_size)
-		mlen = prev_size;
-	buff = ft_memalloc(mlen);
-	if (!buff)
+	*arr = ft_memalloc(arrlen);
+	s = (unsigned char *)*arr;
+	tmp = *lst;
+	if (arrlen == 0)
 		return (0);
-	if (mlen > 0)
-		ft_memcpy(buff, *ptr, prev_size);
-	if (*ptr)
-		free(*ptr);
-	*ptr = (void *)buff;
+	while (tmp)
+	{
+		j = arrlen - tmp->content_size;
+		p = (unsigned char *)tmp->content;
+		ft_memcpy(&s[j], p, tmp->content_size);
+		arrlen -= tmp->content_size;
+		tmp = tmp->next;
+	}
 	return (1);
 }

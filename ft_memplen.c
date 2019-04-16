@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_realloc.c                                       :+:    :+:            */
+/*   ft_memplen.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/31 10:24:11 by lravier       #+#    #+#                 */
-/*   Updated: 2019/04/16 18:41:14 by lravier       ########   odam.nl         */
+/*   Created: 2019/04/04 15:09:37 by lravier       #+#    #+#                 */
+/*   Updated: 2019/04/12 15:46:16 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memrealloc(void **ptr, size_t prev_size, size_t size)
+int		ft_memplen(void *src, void *tofind, size_t len)
 {
-	unsigned char	*buff;
-	size_t			mlen;
+	size_t i;
 
-	buff = NULL;
-	mlen = size;
-	if (size <= prev_size)
-		mlen = prev_size;
-	buff = ft_memalloc(mlen);
-	if (!buff)
-		return (0);
-	if (mlen > 0)
-		ft_memcpy(buff, *ptr, prev_size);
-	if (*ptr)
-		free(*ptr);
-	*ptr = (void *)buff;
-	return (1);
+	i = 0;
+	while (&src[i] != tofind && i < len)
+		i++;
+	return (i);
 }

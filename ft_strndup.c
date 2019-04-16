@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_realloc.c                                       :+:    :+:            */
+/*   ft_strndup.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/31 10:24:11 by lravier       #+#    #+#                 */
-/*   Updated: 2019/04/16 18:41:14 by lravier       ########   odam.nl         */
+/*   Created: 2019/04/02 17:34:39 by lravier       #+#    #+#                 */
+/*   Updated: 2019/04/11 12:47:37 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memrealloc(void **ptr, size_t prev_size, size_t size)
+char	*ft_strndup(char *s, size_t size)
 {
-	unsigned char	*buff;
-	size_t			mlen;
+	char	*res;
+	int		i;
 
-	buff = NULL;
-	mlen = size;
-	if (size <= prev_size)
-		mlen = prev_size;
-	buff = ft_memalloc(mlen);
-	if (!buff)
-		return (0);
-	if (mlen > 0)
-		ft_memcpy(buff, *ptr, prev_size);
-	if (*ptr)
-		free(*ptr);
-	*ptr = (void *)buff;
-	return (1);
+	i = 0;
+	res = ft_strnew(size);
+	if (!res)
+		return (NULL);
+	while (i < (int)size)
+	{
+		res[i] = s[i];
+		i++;
+	}
+	return (res);
 }

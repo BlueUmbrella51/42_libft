@@ -6,7 +6,7 @@
 /*   By: lravier <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/29 13:22:33 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/29 13:27:17 by lravier       ########   odam.nl         */
+/*   Updated: 2019/04/16 18:43:13 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_lstlen(t_list **lst)
 {
-	t_list *tmp;
-	int count;
+	t_list	*tmp;
+	int		count;
 
 	count = 0;
 	tmp = *lst;

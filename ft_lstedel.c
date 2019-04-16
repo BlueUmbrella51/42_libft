@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_realloc.c                                       :+:    :+:            */
+/*   ft_lstedel.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/31 10:24:11 by lravier       #+#    #+#                 */
-/*   Updated: 2019/04/16 18:41:14 by lravier       ########   odam.nl         */
+/*   Created: 2019/04/16 10:47:39 by lravier       #+#    #+#                 */
+/*   Updated: 2019/04/16 10:48:36 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memrealloc(void **ptr, size_t prev_size, size_t size)
+void	ft_lstedel(t_list **alst)
 {
-	unsigned char	*buff;
-	size_t			mlen;
+	t_list *curr;
+	t_list *nxt;
 
-	buff = NULL;
-	mlen = size;
-	if (size <= prev_size)
-		mlen = prev_size;
-	buff = ft_memalloc(mlen);
-	if (!buff)
-		return (0);
-	if (mlen > 0)
-		ft_memcpy(buff, *ptr, prev_size);
-	if (*ptr)
-		free(*ptr);
-	*ptr = (void *)buff;
-	return (1);
+	nxt = *alst;
+	while (nxt)
+	{
+		curr = nxt;
+		free(curr->content);
+		nxt = curr->next;
+		free(curr);
+	}
+	*alst = NULL;
 }
