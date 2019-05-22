@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft1.h                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lravier <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/20 09:28:12 by lravier       #+#    #+#                 */
-/*   Updated: 2019/04/16 18:44:52 by lravier       ########   odam.nl         */
+/*   Created: 2019/03/20 09:28:12 by lravier        #+#    #+#                */
+/*   Updated: 2019/05/22 10:12:44 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,23 +96,9 @@ void				ft_rot(char *s, int rot);
 void				ft_rotr(char *s, int rot);
 int					ft_pow(int base, int pow);
 void				ft_strtolower(char *s);
-t_list				*ft_lstpop(t_list **lst);
-t_list				*ft_lstpopend(t_list **lst);
-int					ft_lstlen(t_list **lst);
-void				ft_strtoupper(char *s);
-int					ft_memrealloc(void **ptr, size_t prev_size, size_t size);
-void				ft_lstremove(t_list **lst, t_list *elem, void
-(*del)(void *, size_t));
-t_list				*ft_lstsearch(t_list **lst,
-t_list *(*find)(t_list *, void *), void *key);
-int					ft_strplen(char *s, char *f);
-char				*ft_strtrunc(char *s, char *f);
-char				*ft_strndup(char *s, size_t size);
-int					ft_memdup(void **dst, void *src, size_t len);
 int					ft_memplen(void *src, void *tofind, size_t len);
-int					ftd_memalloc(void **dst, size_t size);
-int					ft_memtrunc(void **dst, size_t start, size_t len);
 void				ft_lsteremove(t_list **lst, t_list *curr);
-int					ft_lsttoarr(t_list **lst, void **arr, size_t len);
-void				ft_lstedel(t_list **lst);
+int					ft_memtrunc(void **orig, size_t start, size_t len);
+int					ft_lsttoarr(t_list **lst, void **arr, size_t arrlen);
+void				ft_lstedel(t_list **alst);
 #endif

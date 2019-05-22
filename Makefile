@@ -1,14 +1,14 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
 #    By: lravier <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
-#    Created: 2019/03/20 09:31:34 by lravier       #+#    #+#                  #
-#    Updated: 2019/04/02 17:39:07 by lravier       ########   odam.nl          #
+#    Created: 2019/03/20 09:31:34 by lravier        #+#    #+#                 #
+#    Updated: 2019/05/22 10:17:52 by lravier       ########   odam.nl          #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
@@ -26,36 +26,24 @@ ft_lstaddend ft_lstadd ft_lstiter ft_lstmap ft_mempcpy ft_itoabase \
 ft_swap ft_sqrt ft_rot ft_rotr ft_atoibase ft_pow ft_strtolower ft_lstpop \
 ft_lstpopend ft_lstlen ft_strtoupper ft_memrealloc ft_lstremove ft_lstsearch \
 ft_strplen ft_strtrunc ft_strndup ft_memdup ft_memplen ftd_memalloc \
-ft_memtrunc ft_lsteremove ft_lsttoarr ft_lstedel
+ft_memtrunc ft_lsteremove ft_lsttoarr ft_lstedel get_next_line
 CSRCS := $(addsuffix .c, $(RAWFILES))
 OSRCS := $(addsuffix .o, $(RAWFILES))
-HEADER = libft.h
+HEADER = libft.h get_next_line.h
 
 all: $(NAME)
 
-$(NAME): $(OSRCS)
+$(NAME): $(CSRCS)
 	@$(CC) $(CFLAGS) -c $(CSRCS) $(HEADER)
 	@ar rcs $(NAME) $(OSRCS)
-	@rm $(HEADER).gch
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
-	@rm -f *.o *~ *.txt $(HEADER).gch
+	@rm -f *.o *~
 
 fclean: clean
 	@rm -f *.a *.out
 
 re: fclean all
-
-test: 
-	@$(CC) tests.c -L. -lft
-
-extra:
-	@$(CC) extra.c -L. -lft
-
-list: 
-	@$(CC) bonus_test.c -L. -lft
-print:
-	@echo $(RAWFILES)
