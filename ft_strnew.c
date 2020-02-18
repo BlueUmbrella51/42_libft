@@ -3,14 +3,15 @@
 /*                                                        ::::::::            */
 /*   ft_strnew.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: lravier <marvin@codam.nl>                    +#+                     */
+/*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/21 19:18:59 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/28 10:54:28 by lravier       ########   odam.nl         */
+/*   Created: 2019/03/21 19:18:59 by lravier        #+#    #+#                */
+/*   Updated: 2019/09/06 15:15:54 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strnew(size_t size)
 {

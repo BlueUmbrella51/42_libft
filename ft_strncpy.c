@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_strncpy.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: lravier <marvin@codam.nl>                    +#+                     */
+/*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/20 17:10:02 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/21 12:29:35 by lravier       ########   odam.nl         */
+/*   Created: 2019/03/20 17:10:02 by lravier        #+#    #+#                */
+/*   Updated: 2019/10/08 15:06:48 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_atoi.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: lravier <marvin@codam.nl>                    +#+                     */
+/*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/20 15:55:36 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/27 09:18:39 by lravier       ########   odam.nl         */
+/*   Created: 2019/03/20 15:55:36 by lravier        #+#    #+#                */
+/*   Updated: 2019/10/15 18:28:51 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,9 @@ int			ft_atoi(const char *str)
 	int	i;
 	int	polar;
 	int	result;
-	int prev;
-	int c;
 
 	result = 0;
-	prev = 0;
 	i = 0;
-	c = 2;
 	polar = 1;
 	while (ft_isspace(str[i]))
 		i++;
